@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Karla;
+}
+@layer components {
+  /* HOME PAGE */
+  .main-nav .router-link-active.router-link-exact-active {
+    @apply text-rose-400;
+  }
+  .h2 {
+    @apply text-xl text-slate-700 font-bold font-[Inter] tracking-wide uppercase;
+  }
+  .sub {
+    @apply text-slate-500 font-medium text-lg;
+  }
+  .home-projects-list {
+    @apply py-4 flex overflow-x-scroll gap-6;
+  }
+  .home-projects-item {
+    @apply block p-2 w-32 aspect-square rounded-md text-center font-[Inter] text-lg tracking-widest font-black uppercase bg-cover bg-no-repeat;
+  }
+
+  /* ____________________________________________________________________________________________ */
+  /* PLANET FACT SITE */
+  .planet-tab {
+    @apply md:w-full px-2 py-4 font-bold text-[10px] tracking-[0.1rem] border-b-4 border-transparent  sm:font-bold flex items-center gap-6  cursor-pointer text-center md:border-2 md:border-white/20 md:px-6 md:py-3;
+  }
+
+  .stat {
+    @apply px-8 py-2 flex items-center justify-between border-2 border-white/20  uppercase md:flex-col md:px-6 md:py-4 md:items-start md:justify-start md:gap-1;
+  }
+  .stat p:first-child {
+    @apply text-white/50 font-semibold text-[10px];
+  }
+  .stat p:last-child {
+    @apply text-white font-medium font-[Antonio] text-[28px];
+  }
+}
