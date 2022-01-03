@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from "vue"
 import { getImageUrl } from "../util"
-import { data } from "./data"
+import { data } from "./data.js"
 
 let expanded = ref(false)
 let currentSlide = ref(0)
