@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed } from "vue"
-import { getImageUrl } from "../util"
 import { data } from "./data.js"
 
 let expanded = ref(false)
@@ -12,8 +11,7 @@ let slideData = computed(() => {
 })
 let listState = computed(() => expanded.value ? "show" : "hide")
 let hamIcon = computed(() => {
-    let img = "./room/assets/"
-    img += expanded.value ? "icon-close.svg" : "icon-hamburger.svg"
+    let img = expanded.value ? "icon-close.svg" : "icon-hamburger.svg"
     return getImageUrl(img)
 })
 
@@ -31,7 +29,9 @@ const nextSlide = () => {
     currentSlide.value = (currentSlide.value + 1) % 3;
 };
 
-
+const getImageUrl = (dir) => {
+    return new URL(`./assets/${dir}`, import.meta.url);
+};
 </script>
 
 <template>
@@ -147,12 +147,12 @@ p {
 }
 .about-img {
     background-image: v-bind(
-        "`url(${getImageUrl('./room/assets/pexels-medhat-ayad-800305-mobile.jpg')})`"
+        "`url(${getImageUrl('pexels-medhat-ayad-800305-mobile.jpg')})`"
     );
 }
 .about-img2 {
     background-image: v-bind(
-        "`url(${getImageUrl('./room/assets/ellen-qin-bxLhqZIp2LI-unsplash-mobile.jpg')})`"
+        "`url(${getImageUrl('ellen-qin-bxLhqZIp2LI-unsplash-mobile.jpg')})`"
     );
 }
 @media screen and (min-width: 768px) {
@@ -174,6 +174,21 @@ p {
     .about {
         display: grid;
         grid-template-columns: 1fr 1.5fr 1fr;
+    }
+    .slide-img {
+        background-image: v-bind(
+            "`url(${getImageUrl(slideData.imageDesktop)})`"
+        );
+    }
+    .about-img {
+        background-image: v-bind(
+            "`url(${getImageUrl('pexels-medhat-ayad-800305-desktop.jpg')})`"
+        );
+    }
+    .about-img2 {
+        background-image: v-bind(
+            "`url(${getImageUrl('ellen-qin-bxLhqZIp2LI-unsplash-desktop.jpg')})`"
+        );
     }
 }
 </style>
