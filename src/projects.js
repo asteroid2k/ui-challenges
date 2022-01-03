@@ -10,4 +10,15 @@ export const projects = [
     shadow: "#6D2ED5",
     date: "01/01/22",
   },
+  {
+    name: "Room",
+    lname: "Room Homepage",
+    link: "https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq",
+    img: "room.png",
+    routeName: "Room",
+    bgColor: "#ffffff",
+    color: "#454545",
+    shadow: "#ffb53d99",
+    date: "03/01/22",
+  },
 ];

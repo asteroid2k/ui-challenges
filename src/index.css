@@ -12,8 +12,8 @@ body {
 }
 @layer components {
   /* HOME PAGE */
-  .main-nav .router-link-active.router-link-exact-active {
-    @apply text-rose-400;
+  .main-nav .router-link-active {
+    @apply text-rose-500;
   }
   .h2 {
     @apply text-xl text-slate-700 font-bold font-[Inter] tracking-wide uppercase;
@@ -25,7 +25,10 @@ body {
     @apply py-4 flex overflow-x-scroll gap-6;
   }
   .home-projects-item {
-    @apply block p-2 w-32 aspect-square rounded-md text-center font-[Inter] text-lg tracking-widest font-black uppercase bg-cover bg-no-repeat;
+    @apply block p-2 w-24 md:w-32 aspect-square rounded-md text-center font-[Inter] text-sm md:text-lg tracking-widest font-black uppercase bg-cover bg-no-repeat border-2 border-transparent brightness-90;
+  }
+  .home-projects-item.router-link-active {
+    @apply border-rose-400 brightness-100;
   }
 
   /* ____________________________________________________________________________________________ */

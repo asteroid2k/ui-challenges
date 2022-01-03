@@ -26,6 +26,12 @@ const routes = [
           },
         ],
       },
+      // Room site
+      {
+        path: "/room",
+        name: "Room",
+        component: () => import("../room/Index.vue"),
+      },
     ],
   },
   {

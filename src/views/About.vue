@@ -5,9 +5,9 @@ import { HeartIcon } from "@heroicons/vue/solid"
 </script>
 
 <template>
-    <div class="about px-8 flex flex-col gap-10">
+    <div class="about px-8 flex flex-col gap-10 min-h-screen">
         <div>
-            <h2 class="h2">What is this project?</h2>
+            <h2 class="h2 mb-2">What is this project?</h2>
             <p class="sub max-w-2xl">
                 This is just a collection of my implementation of random UI designs I find online. This is to help me become better at Frontend. I didn't really like Frontend, but I've been learning CSS (properly) to improve my skills.
                 <br />Also learning UI/UX and might make awesome designs myself, soon🤌.
@@ -22,7 +22,7 @@ import { HeartIcon } from "@heroicons/vue/solid"
             </p>
         </div>
         <div>
-            <h2 class="h2">Inspo</h2>
+            <h2 class="h2 mb-2">Inspo</h2>
             <p class="sub">Resources for my projects</p>
             <ul>
                 <li v-for="(project,id) in projects" :key="id">
