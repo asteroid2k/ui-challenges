@@ -35,19 +35,21 @@ const nextSlide = () => {
 </script>
 
 <template>
-    <div class="main text-xs font-medium h-[150vh]">
+    <div class="main text-xs font-medium min-h-screen bg-white">
         <section class="content flex flex-col relative">
-            <nav class="absolute z-10 top-0 px-6 py-12 w-full flex">
-                <button class="absolute z-30" @click="toggleNav">
+            <nav class="absolute z-10 top-0 px-6 md:px-16 py-12 w-full flex items-center gap-16">
+                <button class="absolute block z-30 mr-4 md:hidden" @click="toggleNav">
                     <img :src="hamIcon" alt />
                 </button>
-                <div class="brand mx-auto">
+                <div class="brand mx-auto md:mx-0">
                     <img src="./assets/logo.svg" alt="room logo" />
                 </div>
                 <div
-                    :class="`navlist ${listState} absolute z-20 left-0 top-0 flex items-center justify-between w-full  h-full px-6 transition-all duration-300 `"
+                    :class="`navlist ${listState} absolute md:relative z-20 md:z-auto left-0 top-0  flex items-center justify-between w-full  h-full px-6 transition-all duration-300 md:p-0`"
                 >
-                    <ul class="font-semibold text-sm flex gap-6 ml-auto">
+                    <ul
+                        class="font-semibold text-xs md:text-sm flex flex-wrap gap-6 max-w-[350px] pl-8 md:pr-0 ml-auto md:ml-0 md:text-white"
+                    >
                         <li>home</li>
                         <li>shop</li>
                         <li>about</li>
@@ -55,11 +57,11 @@ const nextSlide = () => {
                     </ul>
                 </div>
             </nav>
-            <section>
+            <section class="md:flex w-full top">
                 <div
-                    class="slide-img h-[500px] bg-cover bg-no-repeat bg-top relative bg-transparent"
+                    class="slide-img hero h-[500px] bg-cover bg-no-repeat bg-top md:bg-bottom relative bg-transparent"
                 >
-                    <div class="hero absolute right-0 bottom-0 flex slide-nav">
+                    <div class="absolute right-0 bottom-0 flex slide-nav md:-right-[108px]">
                         <button
                             class="py-4 px-5 bg-black hover:bg-[color:var(--gray-800)] transition-colors group"
                             @click="prevSlide"
@@ -74,32 +76,38 @@ const nextSlide = () => {
                         </button>
                     </div>
                 </div>
-                <div class="slide-text px-6 flex flex-col gap-4 py-16 max-w-[90%]">
-                    <h2 class="text-2xl font-bold">{{ slideData.heading }}</h2>
-                    <p class="leading-5">{{ slideData.text }}</p>
+                <div
+                    class="slide-text px-6 md:px-10 flex flex-col gap-4 py-16 md:max-w-[460px] md:mx-auto"
+                >
+                    <h2
+                        class="text-2xl font-bold max-w-[350px] sm:max-w-[450px]"
+                    >{{ slideData.heading }}</h2>
+                    <p
+                        class="leading-5 max-w-[350px] sm:max-w-[450px] md:max-w-none"
+                    >{{ slideData.text }}</p>
                     <button
-                        class="text-xs p-2 font-semibold uppercase flex tracking-[0.8em] hover:text-[color:var(--gray-800)] gap-4 items-center mt-8 transition-colors group"
+                        class="text-xs py-2 font-semibold uppercase flex tracking-[0.7em] hover:text-[color:var(--gray-800)] gap-4 items-center mt-8 transition-colors group"
                     >
                         shop now
-                        <span class="group-hover:translate-x-1 transition">
+                        <span class="group-hover:translate-x-1 transition flex-shrink">
                             <img src="./assets/icon-arrow.svg" alt />
                         </span>
                     </button>
                 </div>
-                <section class="about flex flex-col">
-                    <div class="h-[300px] about-img bg-cover bg-bottom"></div>
+            </section>
+            <section class="about flex flex-col">
+                <div class="h-[300px] about-img bg-cover bg-bottom"></div>
 
-                    <div class="px-6 py-10">
-                        <h2 class="text-base font-bold uppercase mb-4">About our furniture</h2>
-                        <p class="leading-5">
-                            Our multifunctional collection blends design and function to suit your individual taste.
-                            Make each room unique, or pick a cohesive theme that best express your interests and what
-                            inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-                            or anything in between. Product specialists are available to help you create your dream space.
-                        </p>
-                    </div>
-                    <div class="h-[300px] about-img2 bg-cover bg-bottom"></div>
-                </section>
+                <div class="px-6 py-10 mx-auto">
+                    <h2 class="text-base font-bold uppercase mb-4">About our furniture</h2>
+                    <p class="leading-5 md:max-w-[470px]">
+                        Our multifunctional collection blends design and function to suit your individual taste.
+                        Make each room unique, or pick a cohesive theme that best express your interests and what
+                        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+                        or anything in between. Product specialists are available to help you create your dream space.
+                    </p>
+                </div>
+                <div class="h-[300px] about-img2 bg-cover bg-bottom"></div>
             </section>
         </section>
     </div>
@@ -147,11 +155,25 @@ p {
         "`url(${getImageUrl('./room/assets/ellen-qin-bxLhqZIp2LI-unsplash-mobile.jpg')})`"
     );
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
     .slide-img {
         background-image: v-bind(
             "`url(${getImageUrl(slideData.imageDesktop)})`"
         );
+    }
+    .navlist.hide,
+    .navlist.show {
+        opacity: 1;
+        background-color: transparent;
+        transform: translateX(0);
+    }
+    .top {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+    }
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
     }
 }
 </style>

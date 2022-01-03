@@ -6,7 +6,7 @@ const imgURL = (path) => {
 </script>
 
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen h-full">
     <div class="px-6">
       <h2 class="h2">Timeline</h2>
       <ul class="timeline flex flex-wrap mt-2 gap-6">
@@ -43,7 +43,7 @@ const imgURL = (path) => {
         </li>
       </ul>
     </div>
-    <router-view class="display m-2 rounded"></router-view>
+    <router-view class="display m-2 rounded h-full overflow-x-auto"></router-view>
   </div>
 </template>
 
