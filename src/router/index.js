@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
+const PROJECTS_DIR = "../lib/";
+
 const routes = [
   {
     path: "/",
@@ -12,17 +14,17 @@ const routes = [
         path: "/planets",
         redirect: "/planets/Earth",
         name: "Planets",
-        component: () => import("../planets/Index.vue"),
+        component: () => import(`${PROJECTS_DIR}planets/Index.vue`),
         children: [
           {
             path: "*",
             redirect: "/planets/Earth",
-            component: () => import("../planets/Planet.vue"),
+            component: () => import(`${PROJECTS_DIR}/planets/Planet.vue`),
           },
           {
             path: ":planet",
             name: "Planet",
-            component: () => import("../planets/Planet.vue"),
+            component: () => import(`${PROJECTS_DIR}/planets/Planet.vue`),
           },
         ],
       },
@@ -30,7 +32,13 @@ const routes = [
       {
         path: "/room",
         name: "Room",
-        component: () => import("../room/Index.vue"),
+        component: () => import(`${PROJECTS_DIR}/room/Index.vue`),
+      },
+      //Rest Countries
+      {
+        path: "/countries",
+        name: "Countries",
+        component: () => import(`${PROJECTS_DIR}/countries/Index.vue`),
       },
     ],
   },

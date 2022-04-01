@@ -21,4 +21,15 @@ export const projects = [
     shadow: "#ffb53d99",
     date: "03/01/22",
   },
+  {
+    name: "Countries",
+    lname: "REST Countries",
+    link: "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
+    img: "room.png",
+    routeName: "Countries",
+    bgColor: "#ffffff",
+    color: "#454545",
+    shadow: "#ffb53d99",
+    date: "01/04/22",
+  },
 ];

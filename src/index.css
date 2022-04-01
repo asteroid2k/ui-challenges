@@ -16,16 +16,16 @@ body {
     @apply text-rose-500;
   }
   .h2 {
-    @apply text-xl text-slate-700 font-bold font-[Inter] tracking-wide uppercase;
+    @apply font-[Inter] text-xl font-bold uppercase tracking-wide text-slate-700;
   }
   .sub {
-    @apply text-slate-500 font-medium text-lg;
+    @apply text-lg font-medium text-slate-500;
   }
   .home-projects-list {
-    @apply py-4 flex overflow-x-scroll gap-6;
+    @apply mt-4 mb-2 flex gap-6 overflow-x-scroll rounded-md border border-slate-200 py-4 px-2 shadow-md shadow-slate-200;
   }
   .home-projects-item {
-    @apply block p-2 w-24 md:w-32 aspect-square rounded-md text-center font-[Inter] text-sm md:text-lg tracking-widest font-black uppercase bg-cover bg-no-repeat border-2 border-transparent brightness-90;
+    @apply block aspect-square w-24 rounded-lg border-2 border-transparent bg-cover bg-no-repeat p-2 text-center font-[Inter] text-sm font-black uppercase tracking-wide brightness-90 md:h-32 md:w-36 md:text-lg;
   }
   .home-projects-item.router-link-active {
     @apply border-rose-400 brightness-100;
@@ -34,16 +34,16 @@ body {
   /* ____________________________________________________________________________________________ */
   /* PLANET FACT SITE */
   .planet-tab {
-    @apply md:w-full px-2 py-4 font-bold text-[10px] tracking-[0.1rem] border-b-4 border-transparent  sm:font-bold flex items-center gap-6  cursor-pointer text-center md:border-2 md:border-white/20 md:px-6 md:py-3;
+    @apply flex cursor-pointer items-center gap-6 border-b-4 border-transparent px-2 py-4  text-center text-[10px] font-bold tracking-[0.1rem]  sm:font-bold md:w-full md:border-2 md:border-white/20 md:px-6 md:py-3;
   }
 
   .stat {
-    @apply px-8 py-2 flex items-center justify-between border-2 border-white/20  uppercase md:flex-col md:px-6 md:py-4 md:items-start md:justify-start md:gap-1;
+    @apply flex items-center justify-between border-2 border-white/20 px-8 py-2  uppercase md:flex-col md:items-start md:justify-start md:gap-1 md:px-6 md:py-4;
   }
   .stat p:first-child {
-    @apply text-white/50 font-semibold text-[10px];
+    @apply text-[10px] font-semibold text-white/50;
   }
   .stat p:last-child {
-    @apply text-white font-medium font-[Antonio] text-[28px];
+    @apply font-[Antonio] text-[28px] font-medium text-white;
   }
 }
