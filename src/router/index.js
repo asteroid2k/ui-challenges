@@ -14,17 +14,17 @@ const routes = [
         path: "/planets",
         redirect: "/planets/Earth",
         name: "Planets",
-        component: () => import(`${PROJECTS_DIR}planets/Index.vue`),
+        component: () => import("../lib/planets/Index.vue"),
         children: [
           {
             path: "*",
             redirect: "/planets/Earth",
-            component: () => import(`${PROJECTS_DIR}/planets/Planet.vue`),
+            component: () => import("../lib/planets/Planet.vue"),
           },
           {
             path: ":planet",
             name: "Planet",
-            component: () => import(`${PROJECTS_DIR}/planets/Planet.vue`),
+            component: () => import("../lib/planets/Planet.vue"),
           },
         ],
       },
@@ -32,13 +32,13 @@ const routes = [
       {
         path: "/room",
         name: "Room",
-        component: () => import(`${PROJECTS_DIR}/room/Index.vue`),
+        component: () => import("../lib/room/Index.vue"),
       },
       //Rest Countries
       {
         path: "/countries",
         name: "Countries",
-        component: () => import(`${PROJECTS_DIR}/countries/Index.vue`),
+        component: () => import("../lib/countries/Index.vue"),
       },
     ],
   },
